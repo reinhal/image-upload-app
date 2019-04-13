@@ -6,7 +6,7 @@ var app = express();
 
 // setting up access to static folders
 
-app.use(express.static(path.join(_dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/uploads', express.static('uploads'));
 
@@ -38,7 +38,7 @@ app.use((error, req, res, next) => {
   res.status(error.status || 500)
   res.json({
     error: {
-      message: error.message;
+      message: error.message
     }
   });
 });
